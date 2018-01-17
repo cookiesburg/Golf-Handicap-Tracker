@@ -1,0 +1,3 @@
+<p><%= score.strokes %></p>
+
+<%= link_to 'Delete', course_score_path(@course, score.id), method: :delete, data: {confirm: "Are you sure?"} %>

@@ -1,0 +1,4 @@
+<%=form_for([@course, @course.scores.build]) do |f| %>
+  <%= f.text_field :strokes, placeholder: 'Enter Score'%>
+  <%= f.submit %>
+<% end %>
