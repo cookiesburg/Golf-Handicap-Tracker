@@ -5,6 +5,10 @@ class CoursesController < ApplicationController
   # GET /courses.json
   def index
     @courses = Course.all
+
+    @diffs = Score.all.pluck(:diff)
+
+    @handicap = calculate_index(@diffs)
   end
 
   # GET /courses/1
@@ -70,5 +74,26 @@ class CoursesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def course_params
       params.require(:course).permit(:name, :rating, :slope)
+    end
+
+    def calculate_index(diffs)
+      total = diffs.length
+      if total < 5
+        return
+        'Minumum of 5 scores required'
+      elsif total <= 10
+        ordered = diffs.sort
+        index = ordered[0]*0.96
+        return index.round(1)
+
+
+      elsif total <= 20
+        low_three = diffs.sort[0..2].reduce(:+)
+        return ((low_three/3)*0.96).round(1)
+      else
+        last_twenty = diffs[0..19]
+        low_ten = diffs.sort[0..9].reduce(:+)
+        return ((low_ten/10)*0.96).round(1)
+      end
     end
 end
