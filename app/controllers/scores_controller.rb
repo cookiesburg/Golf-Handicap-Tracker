@@ -2,7 +2,10 @@ class ScoresController < ApplicationController
   before_action :set_course
 
   def create
-    @score = @course.scores.create(score_params)
+
+    diff = (params[:score][:strokes].to_i) - @course.rating
+
+    @score = @course.scores.create(score_params.merge(:diff => diff))
     redirect_to @course
   end
 
@@ -17,6 +20,7 @@ class ScoresController < ApplicationController
   end
 
 
+
   private
 
   def set_course
@@ -24,6 +28,6 @@ class ScoresController < ApplicationController
   end
 
   def score_params
-    params[:score].permit(:strokes)
+    params[:score].permit(:strokes, :diff)
   end
 end
