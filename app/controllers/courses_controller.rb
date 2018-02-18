@@ -5,9 +5,7 @@ class CoursesController < ApplicationController
   # GET /courses.json
   def index
     @courses = Course.all
-
     @diffs = Score.all.pluck(:diff)
-
     @handicap = calculate_index(@diffs)
   end
 
@@ -85,8 +83,6 @@ class CoursesController < ApplicationController
         ordered = diffs.sort
         index = ordered[0]*0.96
         return index.round(1)
-
-
       elsif total <= 20
         low_three = diffs.sort[0..2].reduce(:+)
         return ((low_three/3)*0.96).round(1)

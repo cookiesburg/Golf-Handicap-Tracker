@@ -13,3 +13,77 @@
  *= require_tree .
  *= require_self
  */
+ body {
+   display: flex;
+   font-family: 'Quicksand', sans-serif;
+ }
+ .container {
+   display: flex;
+   flex-direction: column;
+   padding: 20px;
+   min-height: 300px;
+   margin-left: auto;
+   margin-right: auto;
+   background: #d5f2e3;
+   font-family: 'Quicksand', sans-serif;
+   max-width: 50%;
+ }
+ .container > .handicap-box {
+   margin-left: auto;
+   margin-right: auto;
+ }
+
+.handicap-box{
+  display: flex;
+  border: 5px solid black;
+  border-radius: 5px;
+  flex-direction:column;
+  margin-bottom: 30px;
+}
+
+.handicap-box > div{
+  font-size: 70px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 40px;
+}
+
+h3 {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.course-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.course-box {
+  border: 3px solid black;
+  margin: 20px;
+  padding: 20px;
+  width: 140px;
+  height: 100px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.course-box:hover {
+  transform: scale(1.1);
+  transition: transform .4s;
+}
+
+.course-name {
+  font-size: 18px;
+  font-weight: bold;
+  font-family: 'Quicksand', sans-serif;
+}
+
+ .score-item {
+   padding: 20px;
+ }
+
+ p {
+   font-size: 40px;
+ }

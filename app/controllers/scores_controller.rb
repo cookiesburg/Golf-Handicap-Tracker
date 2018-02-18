@@ -6,7 +6,7 @@ class ScoresController < ApplicationController
     diff = (params[:score][:strokes].to_i) - @course.rating
 
     @score = @course.scores.create(score_params.merge(:diff => diff))
-    redirect_to @course
+    redirect_to root_path
   end
 
   def destroy

@@ -1,5 +1,5 @@
-<p><%= score.strokes %></p>
-<p>Differential: <%= score.diff %></p>
-
-
-<%= link_to 'Delete', course_score_path(@course, score.id), method: :delete, data: {confirm: "Are you sure?"} %>
+<div class='score-item'>
+  <div><strong>Score:</strong> <%= score.strokes %></div>
+  <div><strong>Differential:</strong> <%= score.diff.round(1) %></div>
+  <%= link_to 'Delete', course_score_path(@course, score.id), method: :delete, data: {confirm: "Are you sure?"} %>
+</div>

@@ -1,26 +1,28 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @course.name %>
-</p>
+<div class='container'>
+  <p>
+    <strong>Name:</strong>
+    <%= @course.name %>
+  </p>
 
-<p>
-  <strong>Rating:</strong>
-  <%= @course.rating %>
-</p>
+  <p>
+    <strong>Rating:</strong>
+    <%= @course.rating %>
+  </p>
 
-<p>
-  <strong>Slope:</strong>
-  <%= @course.slope %>
-</p>
+  <p>
+    <strong>Slope:</strong>
+    <%= @course.slope %>
+  </p>
 
-<div id='scores-wrapper'>
-  <%= render @course.scores %>
-  <div id='form'>
-    <%= render 'scores/form'%>
+  <div id='scores-wrapper'>
+    <%= render @course.scores %>
+    <div id='form'>
+      <%= render 'scores/form'%>
+    </div>
   </div>
-</div>
 
-<%= link_to 'Edit', edit_course_path(@course) %> |
-<%= link_to 'Back', courses_path %>
+  <%= link_to 'Edit Course Details', edit_course_path(@course) %> |
+  <%= link_to 'Home', courses_path %>
+<div>
