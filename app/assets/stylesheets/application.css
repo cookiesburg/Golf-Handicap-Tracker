@@ -24,10 +24,19 @@
    min-height: 300px;
    margin-left: auto;
    margin-right: auto;
-   background: #d5f2e3;
+   background-color: white;
    font-family: 'Quicksand', sans-serif;
-   max-width: 50%;
+   max-width: 60%;
+   border: 8px solid #71D97E;
+   border-radius: 3%;
  }
+
+h1 {
+  text-align: center;
+  margin-bottom: 50px;
+  font-family: 'Syncopate', sans-serif;
+}
+
  .container > .handicap-box {
    margin-left: auto;
    margin-right: auto;
@@ -35,8 +44,6 @@
 
 .handicap-box{
   display: flex;
-  border: 5px solid black;
-  border-radius: 5px;
   flex-direction:column;
   margin-bottom: 30px;
 }
@@ -60,30 +67,72 @@ h3 {
 }
 
 .course-box {
-  border: 3px solid black;
-  margin: 20px;
-  padding: 20px;
-  width: 140px;
-  height: 100px;
-  text-align: center;
+  margin: 10px;
+  padding: 10px;
+  width: 200px;
   border-radius: 5px;
+  background-color: #A2EBAB;
 }
 
-.course-box:hover {
-  transform: scale(1.1);
-  transition: transform .4s;
+.add {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  border: none;
+}
+
+.add a:link {
+  font-size: 50px;
+  text-decoration: none;
+  color: black;
+}
+
+.course-box-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .course-name {
   font-size: 18px;
-  font-weight: bold;
   font-family: 'Quicksand', sans-serif;
+  margin-top: 10px;
 }
+
+ button {
+   font-size: 14px;
+   padding: 10px;
+   border-radius: 10%;
+   color: white;
+   width:70%;
+   background-color: #BB387D;
+ }
+
+ button a:link {
+   text-decoration: none;
+   color: white;
+ }
+
+ button a:link:hover {
+   cursor: pointer;
+   background-color: inherit;
+   font-weight: bold;
+ }
+
+ p a:link {
+   text-decoration: none;
+   font-size: 16px;
+   color: black;
+   padding: 0px;
+ }
+
+ p a:link:hover {
+   background-color: inherit;
+   color: white;
+ }
 
  .score-item {
    padding: 20px;
- }
-
- p {
-   font-size: 40px;
  }
